@@ -1,0 +1,10 @@
+/node_modules
+node_modules/
+/.idea
+.idea/
+/.idea/workspace.xml
+.DS_Store
+/mock
+/nei.33596.e692a4b0b06d4a5c0c8f09b2e8def817
+_site
+/bin/logs
