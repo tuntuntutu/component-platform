@@ -1,40 +1,49 @@
-# component-platform
+# doc-platform
 
-> v1.0完成于2018年，其他版本可切换分支查看
+> v2.0
 
-react组件演示平台，参考自antd@3.x主站。剥离了内部组件，只剩下空架子和demo代码
+依赖的框架从`v1.0`的 `bisheng`，切换到 `react-styleguidist`([了解更多](https://react-styleguidist.js.org/))
+
+## v1.0 vs v2.0
+
+|版本| 框架 |在线调试|UI定制化|配置灵活度| md meta
+|------|------|------|------|------|------|
+|1.0 |bisheng |不支持|  弱  | 低| 支持
+|2.0 |react-styleguidist | 支持|  强  | 高 | 不支持
 
 
-<img src="https://s8.postimg.cc/w0gy0uql1/333.png">
+## 文档配置
 
-### 查看效果
+1. 在docs中新建目录 `A`，在 `A/`中新建 `config.json`
+> 之所以引入config.json文件，原因有二：
+> 1. 为了扩展md文档本身的属性，如：丰富菜单的内容、控制文档是否显示、meta剥离出md文件等场景
+> 2. 内部是有一个平台统一管理这里的文档，大部分文档是通过其平台配置的gitlab地址去实时爬取，对应了一份配置数据。但同时需要兼容手动塞入的文档
+> 你也可以不采用这种方案，修改`router.config.js`内的逻辑，改为读取目录下的文件生成菜单树
 
-```
+2. 在`config.json`中输入对应的组件文档信息
+
+3. 在 `A/` 中放入组件文档
+
+4. 重新打包应用
+
+## 服务器部署
+
+ 将build下面的产物放置到对应的资源服务器目录，配置代理服务器（如nginx）和域名之后，即可访问
+
+## 本地调试
+
+```shell
 npm i
-
-npm run start
+npm start
 ```
 
-### 使用方法
-
-如果对UI交互没额外要求，可以直接往`components/`目录下丢组件即可。（可参考`/components/pc/test/` 写法）
-
-### 目录介绍
-
+## 本地打包
+```shell
+npm run build
 ```
-├── bin                    // 基于gitlab web hook监听push实时发布的程序
-│   ├── index.html         // 发布状态查看页面
-│   ├── index.js           // 发布相关node代码
-│   └── node-start.json    // 服务器pm2配置
-├── build                  // 打包后的目录
-├── components             // 组件文档，里面的文件夹可以随意命名（不支持驼峰）下面的三个是为了演示
-│   ├── basic
-│   ├── mobile
-│   └── pc
-├── docs                   // 普通文档
-│   └── introduce.md
-└── site                   // 组件平台相关的代码配置
-    ├── bisheng.config.js  // bisheng配置
-    ├── order.config.js    // 一二级菜单类型
-    └── theme              // 模板、样式等UI相关的文件
-```
+
+
+## 其他
+- 文档中如果需要展示代码运行的结果，请设置代码块类型为`jsx`
+- 如果文档目录命名为mobile，系统会自动适配，把mobile组件放置到一个手机模型中展示
+- 为了演示方便，引入了antd@3.x的包，可自行替换为自研组件库或者其他三方库
