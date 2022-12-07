@@ -1,5 +1,5 @@
 module.exports = {
   extends: [
-    require.resolve('eslint-config-ytian'),
+    require.resolve('eslint-config-airbnb'),
   ],
 };

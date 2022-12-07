@@ -1,12 +1,11 @@
 # component-platform
 
-一个react组件演示平台
+> v1.0完成于2018年，其他版本可切换分支查看
+
+react组件演示平台，参考自antd@3.x主站。剥离了内部组件，只剩下空架子和demo代码
+
 
 <img src="https://s8.postimg.cc/w0gy0uql1/333.png">
-
-### 背景
-
-内部需要搭建一个业务组件平台，用以展示组件的文档和演示效果。故而借鉴antd用bisheng搭建了这个平台。
 
 ### 查看效果
 
@@ -18,7 +17,7 @@ npm run start
 
 ### 使用方法
 
-git clone 之后，如果对UI交互没额外要求，可以直接往 components目录下丢组件即可。（可以参考test写法）
+如果对UI交互没额外要求，可以直接往`components/`目录下丢组件即可。（可参考`/components/pc/test/` 写法）
 
 ### 目录介绍
 
@@ -39,7 +38,3 @@ git clone 之后，如果对UI交互没额外要求，可以直接往 components
     ├── order.config.js    // 一二级菜单类型
     └── theme              // 模板、样式等UI相关的文件
 ```
-
-### 小原理
-如果有兴趣了解下这个平台搭建相关的技术和md转化react代码的流程细节，可以查看 https://github.com/tuntuntutu/impressShow
-
