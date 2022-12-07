@@ -1753,7 +1753,7 @@
   dependencies:
     "color-convert" "^2.0.1"
 
-"antd@3.6.3":
+"antd@^3.6.3":
   "integrity" "sha1-Ka0A2ke5Fip5NWcqbIukP0VxOv8="
   "resolved" "https://registry.npm.taobao.org/antd/download/antd-3.6.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fantd%2Fdownload%2Fantd-3.6.3.tgz"
   "version" "3.6.3"
