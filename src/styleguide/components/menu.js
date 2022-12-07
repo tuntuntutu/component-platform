@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import remcalc from 'remcalc';
 import is from 'styled-is';
+import BASE from '../config';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -112,7 +113,7 @@ export default class extends Component {
             items.map(({ name, description }) => (
               <li key={name}>
                 <Header active={isActive(name)}>
-                  <Link active={isActive(name)} href={`/#!/${name}`}>
+                  <Link active={isActive(name)} href={`${BASE}/#!/${name}`}>
                     <div className="componentName">{name.split('@')[0]}</div>
                     <div className="nickname">{description ? description.subtitle : null}</div>
                   </Link>
